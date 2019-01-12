@@ -1,37 +1,39 @@
-import mypanel.*
-import mypanel.label*
+import mypanel.*;
+import mypanel.label.*;
 //swing
 import javax.swing.*;
 import java.awt.*; 
 import java.awt.Color;
 import java.awt.Container;
-public class test1 extends JFrame{
-	public static void main(String[] args){
-		test1 t1=new test1();
-	}
-	public test1(){
-		//å¼€å¤´ï¼š
+public class test_imp extends JFrame{
+	public imp p1 = new imp("board.png",1,100,0);
+	public test_imp(){
+		//¿ªÍ·£º
 		super("fish");
-		//è®¾ç½®ç»å¯¹å¸ƒå±€ï¼š
+		//ÉèÖÃ¾ø¶Ô²¼¾Ö£º
 		GridLayout grid =new GridLayout(2,2);
 		setLayout(grid);
-		//å»æ‰è¾¹æ¡†ï¼Œè¿™å¥è¯å¿…é¡»å¾€å‰æ”¾ï¼Œå¦åˆ™ä¼šæŠ¥é”™ï¼š
-		//æ”¾ç½®åœ¨éœ€è¦è¯»å–å±å¹•å¤§å°çš„è¯­å¥ä¹‹å‰
+		//È¥µô±ß¿ò£¬Õâ¾ä»°±ØĞëÍùÇ°·Å£¬·ñÔò»á±¨´í£º
+		//·ÅÖÃÔÚĞèÒª¶ÁÈ¡ÆÁÄ»´óĞ¡µÄÓï¾äÖ®Ç°
 		setUndecorated(true);
-		//èƒŒæ™¯è‰²ï¼š
+		//±³¾°É«£º
 		Color ilike=new Color(153,168,205);
 		getContentPane().setBackground(ilike);
-		//å¾—åˆ°çª—ä½“å¤§å°ï¼š
+		//µÃµ½´°Ìå´óĞ¡£º
 		Dimension   screensize   =   Toolkit.getDefaultToolkit().getScreenSize();
 		int width = (int)screensize.getWidth();
 		int height = (int)screensize.getHeight();
 		//add
-		
+		add(p1,10,0);
 		//big:
 		//setExtendedState(JFrame.MAXIMIZED_BOTH);
         setSize(width, height); 
         setVisible(true);
-		//ç”¨äºå½»åº•å…³é—­ç¨‹åºï¼š
+		//ÓÃÓÚ³¹µ×¹Ø±Õ³ÌĞò£º
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public static void main(String[] args){
+		test_imp t1=new test_imp();
 	}
 }
