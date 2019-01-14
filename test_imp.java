@@ -17,17 +17,26 @@ public class test_imp extends JFrame{
 		//放置在需要读取屏幕大小的语句之前
 		setUndecorated(true);
 		//背景色：
-		Color ilike=new Color(153,168,205);
-		getContentPane().setBackground(ilike);
+		Color ilike=new Color(0,0,0,0);
+		this.setBackground(ilike);
 		//得到窗体大小：
 		Dimension   screensize   =   Toolkit.getDefaultToolkit().getScreenSize();
 		int width = (int)screensize.getWidth();
 		int height = (int)screensize.getHeight();
-		//add
+		
+		//窗体透明设置：
+		/* double value = 1;
+		if (com.sun.awt.AWTUtilities.isWindowOpaque(this)) {
+            com.sun.awt.AWTUtilities.setWindowOpacity(this, (float)(1 - value));
+        } else {
+            JOptionPane.showMessageDialog(this, "系统不支持 JDK版本过低或 JRE 系统库缺损");
+        } */
+		
+		
 		add(p1,10,0);
 		//big:
 		//setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setSize(width, height); 
+        setSize(width/2, height/2); 
         setVisible(true);
 		//用于彻底关闭程序：
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
