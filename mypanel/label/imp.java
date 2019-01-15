@@ -14,6 +14,9 @@ import javax.imageio.ImageIO;
 import java.io.*;
 
 public class imp extends JLabel{
+	//开发者的屏幕高度：
+	public int developer_height=768;
+	
 	//ui部分：
 	public ImageIcon ic1;
 	//显示属性：
@@ -51,8 +54,8 @@ public class imp extends JLabel{
 		int width = (int)screensize.getWidth();
 		int height = (int)screensize.getHeight();
 		//计算UI的大小：
-		UIwidth=(int)((imgwidth-minx)*compressRate*(width/768));
-		UIheight=(int)((imgheight-miny)*compressRate*(width/768));
+		UIwidth=(int)((imgwidth-minx)*compressRate*(height/developer_height));
+		UIheight=(int)((imgheight-miny)*compressRate*(height/developer_height));
 		//第一是左上角的x坐标，第二个是左上角y左边，第三个是控件宽度，第四个是高度
 		ic1.setImage(ic1.getImage().getScaledInstance(UIwidth,UIheight,Image.SCALE_DEFAULT));
 		this.setIcon(ic1);

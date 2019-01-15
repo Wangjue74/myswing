@@ -7,12 +7,13 @@ import java.awt.Color;
 import java.awt.Container;
 public class test_imp extends JFrame{
 	public imp p1 = new imp("board.png",1,100,0);
+	public imbtn p2 = new imbtn("board.png",1,300,0);
 	public test_imp(){
 		//开头：
 		super("fish");
 		//设置绝对布局：
 		GridLayout grid =new GridLayout(2,2);
-		setLayout(grid);
+		setLayout(null);
 		//去掉边框，这句话必须往前放，否则会报错：
 		//放置在需要读取屏幕大小的语句之前
 		setUndecorated(true);
@@ -33,10 +34,11 @@ public class test_imp extends JFrame{
         } */
 		
 		
-		add(p1,10,0);
+		//add(p1,10,0);
+		add(p2,10,0);
 		//big:
 		//setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setSize(width/2, height/2); 
+        setSize(width, height); 
         setVisible(true);
 		//用于彻底关闭程序：
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
